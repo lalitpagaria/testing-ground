@@ -22,9 +22,9 @@ jobs:
 
       - name: Execure workflow
         env:
-          SEARCHTWEETS_BEARER_TOKEN: ${{ secrets.SEARCHTWEETS_BEARER_TOKEN }}
-          SEARCHTWEETS_CONSUMER_KEY: ${{ secrets.SEARCHTWEETS_CONSUMER_KEY }}
-          SEARCHTWEETS_CONSUMER_SECRET: ${{ secrets.SEARCHTWEETS_CONSUMER_SECRET }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.SEARCHTWEETS_BEARER_TOKEN }}
+          TWITTER_CONSUMER_KEY: ${{ secrets.SEARCHTWEETS_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.SEARCHTWEETS_CONSUMER_SECRET }}
           OBSEI_CONFIG_PATH: /tmp
           OBSEI_CONFIG_FILENAME: workflow.yaml
           WORKFLOW: ${{ secrets.WORKFLOW }}
