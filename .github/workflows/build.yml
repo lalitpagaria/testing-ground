@@ -3,11 +3,11 @@ name: testing_groud
 on:
   push:
     branches: [ master ]
-#  schedule:
-#    - cron: '0 * * * *'
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
-  type-check:
+  testing_workflow:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
           SEARCHTWEETS_CONSUMER_SECRET: ${{ secrets.SEARCHTWEETS_CONSUMER_SECRET }}
           OBSEI_CONFIG_PATH: /tmp
           OBSEI_CONFIG_FILENAME: workflow.yaml
-          WORKFLOW: ${{ secrets.workflow }}
+          WORKFLOW: ${{ secrets.WORKFLOW }}
         run: |
           echo "${WORKFLOW}" > "${OBSEI_CONFIG_PATH}/${OBSEI_CONFIG_FILENAME}"
           python workflow.py
