@@ -27,5 +27,11 @@ jobs:
           OBSEI_CONFIG_FILENAME: workflow.yaml
           WORKFLOW: ${{ secrets.WORKFLOW }}
         run: |
+          export TWITTER_BEARER_TOKEN
+          export TWITTER_CONSUMER_KEY
+          export TWITTER_CONSUMER_SECRET
+          export OBSEI_CONFIG_PATH
+          export OBSEI_CONFIG_FILENAME
+          export WORKFLOW
           echo "${WORKFLOW}" > "${OBSEI_CONFIG_PATH}/${OBSEI_CONFIG_FILENAME}"
           python workflow.py
