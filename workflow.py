@@ -1,4 +1,7 @@
 from obsei.configuration import ObseiConfiguration
+from dotenv import load_dotenv
+
+load_dotenv()
 
 obsei_configuration = ObseiConfiguration()
 
