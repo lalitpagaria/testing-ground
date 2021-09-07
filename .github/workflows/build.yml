@@ -27,6 +27,5 @@ jobs:
           OBSEI_CONFIG_FILENAME: workflow.yaml
           WORKFLOW: ${{ secrets.WORKFLOW }}
         run: |
-          for env in $( cat /etc/environment ); do export $(echo $env | sed -e 's/"//g'); done
           echo "${WORKFLOW}" > "${OBSEI_CONFIG_PATH}/${OBSEI_CONFIG_FILENAME}"
           python workflow.py
